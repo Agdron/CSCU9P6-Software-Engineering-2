@@ -1,0 +1,41 @@
+/**
+ * Describes an aircraft's flight plan.
+ * An aircraft entering an airport's airspace has come from the "from" airport, and wishes to land at the "to" airport, before travelling on to the "next" airport.
+ * So, an aircraft whose flight descriptor contains an itinerary with "Stirling" as the "to" attribute wishes to land at Stirling now, otherwise it is just passing through local airspace on its way to its destination.
+ * Incoming flights supply their Itinerary in their flight descriptor, and the ManagementRecord for the flight extracts the Itinerary and holds it separately.
+ * Outbound flights have their Itineraries uploaded to the aircraft as it departs in a newly built FlightDescriptor.
+ */
+public class Itinerary {
+	private String from;
+
+	//See Itinerary class description
+	private String to;
+
+	//See Itinerary class description
+	private String next;
+	
+	/**
+ 	*  Constructor: Requires names of where the flight is coming from,
+  	* where it is going to now, and where next after that.
+   	*/
+	public Itinerary(String from, String to, String next){
+		this.from = from;
+		this.to = to;
+		this.next = next;
+	}
+	
+	/**Return the flight from attribute*/
+	public String getFrom(){
+		return from;
+	}
+	
+	/**Return the flight To destination attribute*/
+	public String getTo(){
+		return to;
+	}
+	
+	/**Return the flight next stop attribute*/
+	public String getNext(){
+		return next;
+	}
+}
